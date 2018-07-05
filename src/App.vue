@@ -1,27 +1,19 @@
 <template>
   <div id="app">
-    <div class="hero is-fullheight wrapper">
-      <div class="hero-head">
-        <header class="navbar">
-          <div class="container title-container">
-            <div class="navbar-brand">
-              <div class="nav-item">
-                <span class="title-container__title">VueBook</span>
-              </div>
+    <section class="hero is-fullheight wrapper">
+      <div class="hero-header">
+        <div class="container">
+          <div class="columns is-multiline is-centered">
+            <div class="column is-12">
+              <h1 class="main-title has-text-centered">Vuebook</h1>
+            </div>
+            <div class="column is-half">
+                <router-view></router-view>
             </div>
           </div>
-        </header>
-      </div>
-      <div class="hero-body main-container">
-        <div class="container">
-          <div class="columns">
-            <div class="column is-8 is-offset-2 has-background-white-ter">
-              <router-view></router-view>
-            </div>
-        </div>
         </div>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 
@@ -51,15 +43,8 @@ body {
 .wrapper {
   background: $body-background;
 }
-.title-container {
-  justify-content: center;
-}
 
-.main-container {
-  align-items: start !important;
-}
-
-.title-container__title {
+.main-title {
   font-size: 50px;
   letter-spacing: 2px;
   line-height: 1.3;

@@ -1,18 +1,24 @@
 <template>
-    <form @submit.prevent="onSignin()" class="container">
-    <div class="columns">
-      <div class="column is-8">
+    <form @submit.prevent="onSignin()" class="box">
         <div class="field">
-          <div class="control">
+          <label class="label">Email</label>
+          <div class="control has-icons-left">
             <input placeholder="Email" v-model="email" name='email' class="input" type="email" v-validate="'required|email'">
+            <span class="icon is-small is-left">
+                        <i class="fa fa-envelope"></i>
+            </span>
           <div class="block">
             <span class="tag is-danger" v-if="errors.has('email')">{{errors.first('email')}}</span>
           </div>
           </div>
         </div>
         <div class="field">
-          <div class="control">
+          <label class="label">Password</label>
+          <div class="control has-icons-left">
             <input placeholder="******" v-model="password" class ="input" type="password" v-validate="{ required: true, min: 6 }" name="password">
+            <span class="icon is-small is-left">
+                        <i class="fa fa-lock"></i>
+                      </span>
           <div class="block">
             <span class="tag is-danger" v-if="errors.has('password')">{{errors.first('password')}}</span>
           </div>
@@ -20,11 +26,9 @@
         </div>
         <div class="field">
           <div class="control">
-            <button :disabled="errors.any()" type="submit" class="button is-primary is-large" :class="{'is-loading': this.loading}">Sign In</button>
+            <button :disabled="errors.any()" type="submit" class="button is-primary" :class="{'is-loading': this.loading}">Sign In</button>
           </div>
         </div>
-      </div>
-    </div>
   </form>
 </template>
 
